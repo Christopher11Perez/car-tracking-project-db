@@ -55,8 +55,9 @@ The ETL reads the Parquet files from `data/` and loads them into the PostgreSQL 
 
 The final Phase I database is hosted on Render.
 
-Host: <Render hostname>  
+Host: dpg-db42s3qj9qps73fv6dn0-a.virginia-postgres.render.com  
 Port: 5432  
-Database: <database name>  
-Username: <username>  
-Password: <password>
+Database: proj_db_tzwy  
+Username: proj_db_tzwy_user  
+Password: <password>  
+SSL Mode: require
