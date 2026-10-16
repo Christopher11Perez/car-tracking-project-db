@@ -1,0 +1,31 @@
+{
+    "sqltools.connections": [
+        {
+            "pgOptions": {
+                "ssl": {
+                    "rejectUnauthorized": true
+                }
+            },
+            "ssh": "Disabled",
+            "previewLimit": 50,
+            "server": "dpg-db42s3qj9qps73fv6dn0-a.virginia-postgres.render.com",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "Render",
+            "password": "8gcvIIlDNZ037S1nFjDs1ESbzOjhCflg",
+            "username": "proj_db_tzwy_user",
+            "database": "proj_db_tzwy"
+        },
+        {
+            "ssh": "Disabled",
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "Docker",
+            "database": "cartracking",
+            "username": "postgres",
+            "password": "postgres"
+        }
+    ]
+}
