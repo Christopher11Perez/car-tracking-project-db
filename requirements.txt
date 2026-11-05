@@ -1,3 +1,7 @@
 pandas
 pyarrow
 psycopg[binary]
+fastapi
+uvicorn
+psycopg2-binary
+pydantic
