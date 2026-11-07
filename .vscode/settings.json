@@ -1,22 +1,6 @@
 {
     "sqltools.connections": [
         {
-            "pgOptions": {
-                "ssl": {
-                    "rejectUnauthorized": true
-                }
-            },
-            "ssh": "Disabled",
-            "previewLimit": 50,
-            "server": "dpg-db42s3qj9qps73fv6dn0-a.virginia-postgres.render.com",
-            "port": 5432,
-            "driver": "PostgreSQL",
-            "name": "Render",
-            "password": "8gcvIIlDNZ037S1nFjDs1ESbzOjhCflg",
-            "username": "proj_db_tzwy_user",
-            "database": "proj_db_tzwy"
-        },
-        {
             "ssh": "Disabled",
             "previewLimit": 50,
             "server": "localhost",
@@ -26,6 +10,22 @@
             "database": "cartracking",
             "username": "postgres",
             "password": "postgres"
+        },
+        {
+            "pgOptions": {
+                "ssl": {
+                    "rejectUnauthorized": true
+                }
+            },
+            "ssh": "Disabled",
+            "previewLimit": 50,
+            "server": "dpg-dbnh1obrjlhs738psum0-a.virginia-postgres.render.com",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "Render",
+            "database": "proj_db_tzwy_saw8",
+            "username": "proj_db_tzwy_user",
+            "password": "CmLLUC25YKUjMCh8fdmjIwG1PMRwe5vF"
         }
     ],
     "python-envs.defaultEnvManager": "ms-python.python:system"
