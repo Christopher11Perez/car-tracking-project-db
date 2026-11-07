@@ -15,12 +15,12 @@ POOL_CONFIG = {
 #     "sslmode": os.getenv("DB_SSLMODE", "prefer"),
 # }
 
-# Render
+#  credenciales obtenidas por enviroment variables de render.
 PG_DB_CONFIG = {
-    "dbname": "proj_db_tzwy_saw8",
-    "user": "proj_db_tzwy_user",
-    "password": "CmLLUC25YKUjMCh8fdmjIwG1PMRwe5vF",
-    "host": "dpg-dbnh1obrjlhs738psum0-a.virginia-postgres.render.com",
-    "port": 5432,
-    "sslmode": "require",
+    "dbname": os.getenv("DB_NAME"),
+    "user": os.getenv("DB_USER"),
+    "password": os.getenv("DB_PASSWORD"),
+    "host": os.getenv("DB_HOST"),
+    "port": int(os.getenv("DB_PORT", "5432")),
+    "sslmode": os.getenv("DB_SSLMODE", "require"),
 }
