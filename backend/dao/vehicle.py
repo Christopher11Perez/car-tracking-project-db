@@ -321,7 +321,6 @@ class VehicleDAO:
 
             query = """
             insert into vehicle (
-                vehicle_id,
                 vehicle_type_id,
                 vehicle_status_id,
                 plate_number,
@@ -331,7 +330,6 @@ class VehicleDAO:
                 created_at
             )
             values (
-                (select coalesce(max(vehicle_id), 0) + 1 from vehicle),
                 %s,
                 %s,
                 %s,

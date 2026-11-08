@@ -236,7 +236,6 @@ class TripDAO:
 
             query = """
             insert into trip (
-                trip_id,
                 vehicle_id,
                 start_ts,
                 end_ts,
@@ -245,13 +244,6 @@ class TripDAO:
                 distance_km
             )
             values (
-                (
-                    select coalesce(
-                        max(trip_id),
-                        0
-                    ) + 1
-                    from trip
-                ),
                 %s,
                 %s,
                 %s,

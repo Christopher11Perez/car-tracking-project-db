@@ -232,20 +232,12 @@ class VehicleAssignmentDAO:
 
             query = """
             insert into vehicle_assignment (
-                assignment_id,
                 vehicle_id,
                 driver_id,
                 assigned_from,
                 assigned_to
             )
             values (
-                (
-                    select coalesce(
-                        max(assignment_id),
-                        0
-                    ) + 1
-                    from vehicle_assignment
-                ),
                 %s,
                 %s,
                 %s,

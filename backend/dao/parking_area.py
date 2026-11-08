@@ -241,20 +241,12 @@ class ParkingAreaDAO:
 
             query = """
             insert into parking_area (
-                parking_area_id,
                 name,
                 capacity,
                 geom,
                 created_at
             )
             values (
-                (
-                    select coalesce(
-                        max(parking_area_id),
-                        0
-                    ) + 1
-                    from parking_area
-                ),
                 %s,
                 %s,
                 ST_SetSRID(

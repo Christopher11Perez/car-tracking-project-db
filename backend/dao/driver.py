@@ -237,20 +237,12 @@ class DriverDAO:
 
             query = """
             insert into driver (
-                driver_id,
                 first_name,
                 last_name,
                 license_number,
                 hired_at
             )
             values (
-                (
-                    select coalesce(
-                        max(driver_id),
-                        0
-                    ) + 1
-                    from driver
-                ),
                 %s,
                 %s,
                 %s,

@@ -228,7 +228,6 @@ class RoadSegmentDAO:
 
             query = """
             insert into road_segment (
-                road_id,
                 name,
                 speed_limit_kph,
                 is_oneway,
@@ -237,13 +236,6 @@ class RoadSegmentDAO:
                 created_at
             )
             values (
-                (
-                    select coalesce(
-                        max(road_id),
-                        0
-                    ) + 1
-                    from road_segment
-                ),
                 %s,
                 %s,
                 %s,

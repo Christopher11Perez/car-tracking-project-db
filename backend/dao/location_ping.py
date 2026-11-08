@@ -258,7 +258,6 @@ class LocationPingDAO:
 
             query = """
             insert into location_ping (
-                ping_id,
                 vehicle_id,
                 ts,
                 geom,
@@ -266,13 +265,6 @@ class LocationPingDAO:
                 heading_deg
             )
             values (
-                (
-                    select coalesce(
-                        max(ping_id),
-                        0
-                    ) + 1
-                    from location_ping
-                ),
                 %s,
                 %s,
                 ST_SetSRID(

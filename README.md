@@ -1,20 +1,25 @@
 # car-tracking-project-db
+
 Database project for CIIC 4060 / ICOM 5016.
 
 ## Technologies
 
 - Python
-- PostgreSQL
+- FastAPI
+- PostgreSQL 17
 - PostGIS
 - Docker
 - pandas
 - pyarrow
-- psycopg
+- psycopg / psycopg2
+- Render
 
 ## Project Structure
 
 - `data/` - Parquet source files
 - `ETL/` - Python ETL code
+- `database/` - Database schema and sequence synchronization scripts
+- `backend/` - FastAPI REST API
 - `requirements.txt` - Python dependencies
 
 ## Requirements
@@ -51,13 +56,51 @@ python ETL/main.py
 
 The ETL reads the Parquet files from `data/` and loads them into the PostgreSQL database.
 
+After running the ETL, run:
+
+```text
+database/sync_sequences.sql
+```
+
+to synchronize the PostgreSQL identity sequences with the imported IDs.
+
+## Running the API
+
+From the `backend/` directory, run:
+
+```bash
+uvicorn main:app --reload
+```
+
+The API uses the base path:
+
+```text
+/api/v1
+```
+
+## API Deployment
+
+The Phase II FastAPI application is hosted on Render.
+
+API URL:
+
+```text
+https://car-tracking-project-db.onrender.com
+```
+
+Swagger documentation:
+
+```text
+https://car-tracking-project-db.onrender.com/docs
+```
+
 ## Database Connection
 
-The final Phase I database is hosted on Render.
+The production database is hosted on Render.
 
-Host: dpg-db42s3qj9qps73fv6dn0-a.virginia-postgres.render.com  
+Host: dpg-dbnh1obrjlhs738psum0-a.virginia-postgres.render.com  
 Port: 5432  
-Database: proj_db_tzwy  
+Database: proj_db_tzwy_saw8 
 Username: proj_db_tzwy_user  
 Password: <password>  
 SSL Mode: require
