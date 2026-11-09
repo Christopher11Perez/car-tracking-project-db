@@ -1,3 +1,8 @@
+CREATE EXTENSION IF NOT EXISTS postgis;
+
+CREATE SCHEMA IF NOT EXISTS projectfall2026;
+SET search_path TO projectfall2026, public;
+
 CREATE TABLE vehicle_kind (
     vehicle_kind_id BIGINT PRIMARY KEY,
     name TEXT

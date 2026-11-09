@@ -51,15 +51,17 @@ class TripHandler:
                 clean_value
             )
 
-            if parsed.tzinfo is not None:
-                parsed = (
-                    parsed.astimezone(
-                        timezone.utc
-                    )
-                    .replace(
-                        tzinfo=None
-                    )
+            if parsed.tzinfo is None or parsed.utcoffset() is None:
+                raise ValueError("Timestamp must include a timezone")
+
+            parsed = (
+                parsed.astimezone(
+                    timezone.utc
                 )
+                .replace(
+                    tzinfo=None
+                )
+            )
 
             return parsed
 

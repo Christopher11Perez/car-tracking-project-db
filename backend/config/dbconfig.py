@@ -13,4 +13,5 @@ PG_DB_CONFIG = {
     "host": os.getenv("DB_HOST", "localhost"),
     "port": int(os.getenv("DB_PORT", "5432")),
     "sslmode": os.getenv("DB_SSLMODE", "prefer"),
+    "options": "-c search_path=projectfall2026,public",
 }

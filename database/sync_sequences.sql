@@ -1,5 +1,7 @@
 -- Correr despues de ETL para sincronizar autoincrement de ids.
 
+SET search_path TO projectfall2026, public;
+
 SELECT setval(pg_get_serial_sequence('driver', 'driver_id'), COALESCE(MAX(driver_id), 0) + 1, false)
 FROM driver;
 
